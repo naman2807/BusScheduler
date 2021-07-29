@@ -1,3 +1,7 @@
 package com.example.busschedule
 
-data class Schedule()
+import androidx.room.PrimaryKey
+
+data class Schedule(
+    @PrimaryKey val id: Int
+)
