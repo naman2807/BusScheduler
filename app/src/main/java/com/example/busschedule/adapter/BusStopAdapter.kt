@@ -1,6 +1,7 @@
 package com.example.busschedule.adapter
 
 import android.annotation.SuppressLint
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +24,13 @@ class BusStopAdapter(private val onItemClicked: (Schedule) -> Unit) : ListAdapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BusStopViewHolder {
-        TODO("Not yet implemented")
+        val viewHolder = BusStopViewHolder(
+            BusStopItemBinding.inflate(
+                LayoutInflater.from( parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: BusStopViewHolder, position: Int) {
