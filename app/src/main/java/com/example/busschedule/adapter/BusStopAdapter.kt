@@ -3,6 +3,7 @@ package com.example.busschedule.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.busschedule.database.Schedule
@@ -42,5 +43,17 @@ class BusStopAdapter(private val onItemClicked: (Schedule) -> Unit) : ListAdapte
 
     override fun onBindViewHolder(holder: BusStopViewHolder, position: Int) {
         holder.bind(getItem(position))
+    }
+
+    companion object {
+        private val DiffCallBack = object : DiffUtil.ItemCallback<Schedule>() {
+            override fun areItemsTheSame(oldItem: Schedule, newItem: Schedule): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: Schedule, newItem: Schedule): Boolean {
+                return oldItem == newItem
+            }
+        }
     }
 }
