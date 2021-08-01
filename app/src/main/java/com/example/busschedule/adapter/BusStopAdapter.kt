@@ -31,6 +31,11 @@ class BusStopAdapter(private val onItemClicked: (Schedule) -> Unit) : ListAdapte
                 false
             )
         )
+
+        viewHolder.itemView.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            onItemClicked(getItem(position))
+        }
     }
 
     override fun onBindViewHolder(holder: BusStopViewHolder, position: Int) {
