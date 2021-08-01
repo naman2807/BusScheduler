@@ -1,4 +1,6 @@
 package com.example.busschedule.viewmodel
 
-class BusScheduleViewModel {
+import com.example.busschedule.database.ScheduleDao
+
+class BusScheduleViewModel(private val scheduleDao: ScheduleDao) {
 }
