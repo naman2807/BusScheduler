@@ -4,5 +4,5 @@ import android.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.busschedule.database.Schedule
 
-class BusStopAdapter:ListAdapter<Schedule, BusStopAdapter.BusStopViewHolder>(DiffCallBack) {
+class BusStopAdapter(private val onItemClicked: (Schedule) -> Unit): ListAdapter<Schedule, BusStopAdapter.BusStopViewHolder>(DiffCallBack) {
 }
